@@ -1,10 +1,12 @@
 from flask import Flask
-from health_check import healthy
+import healthCheck
 
 app = Flask(__name__)
 
-app.register_blueprint(healthy)
+app.register_blueprint(healthCheck.healthy)
 
 @app.route("/")
 def hello():
     return "Hello World!"
+
+
